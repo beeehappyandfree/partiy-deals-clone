@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BrandLogo from "@/components/BrandLogo";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function NavBar() {
     return (
@@ -17,6 +18,15 @@ export default function NavBar() {
                 <Link href="#" className="text-lg">
                     About
                 </Link>
+                <span className="text-lg">
+                    <SignedIn>
+                        <Link href="/dashboard">Dashboard</Link>
+                        <UserButton />
+                    </SignedIn>
+                    <SignedOut>
+                        <SignInButton>Login</SignInButton>
+                    </SignedOut>
+                </span>
             </nav>
         </div>
     )
