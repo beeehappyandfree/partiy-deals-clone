@@ -21,7 +21,6 @@ export default function NavBar() {
                 <span className="text-lg">
                     <SignedIn>
                         <Link href="/dashboard">Dashboard</Link>
-                        <UserButton />
                     </SignedIn>
                     <SignedOut>
                         <SignInButton>Login</SignInButton>
