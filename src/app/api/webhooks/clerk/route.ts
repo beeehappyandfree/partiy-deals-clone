@@ -54,6 +54,7 @@ export async function POST(req: Request) {
             console.log('User deleted:', event.data)
             if (event.data.id != null) {
                 await deleteUserSubscription(event.data.id)
+                // TODO: Delete user from stripe
             }
             break
     }
