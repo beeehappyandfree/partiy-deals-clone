@@ -58,7 +58,7 @@ export function ProductCard({
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent>
-                                <DropdownMenuItem>
+                                <DropdownMenuItem asChild>
                                     <Link href={`/dashboard/products/${id}/edit`}>
                                         Edit
                                     </Link>
