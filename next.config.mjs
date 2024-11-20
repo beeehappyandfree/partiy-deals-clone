@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    experimental: {
+      staleTimes: {
+        dynamic: 0,
+      },
+    },
+  }
+  
+  export default nextConfig
