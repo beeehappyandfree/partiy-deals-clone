@@ -35,9 +35,12 @@ export async function createProduct(data: typeof ProductTable.$inferInsert) {
 }
 
 export async function deleteProduct({ id, userId }: { id: string, userId: string }) {  
-    const { rowCount } = await db
+    const deleted = await db
         .delete(ProductTable)
         .where(and(eq(ProductTable.id, id), eq(ProductTable.clerkUserId, userId)))
+        .returning()
+    
+    const rowCount = deleted.length
     
     if (rowCount > 0) {
         revalidateDbCache({
